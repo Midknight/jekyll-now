@@ -4,8 +4,10 @@
 //
 
 // Colors
-$blue: #4183C4;
-
+$color-palette: (
+  primary: #DD4F2E,
+  secondary: #F4D3E2,
+);
 // Grays
 $black: #000;
 $darkerGray: #222;
@@ -15,13 +17,24 @@ $lightGray: #eee;
 $white: #fff;
 
 // Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+$sans-serif-ff: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$serif-ff: Georgia, Times, 'Times New Roamn', serif;
 
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1366px) {
     @content;
   }
 }
