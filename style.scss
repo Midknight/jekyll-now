@@ -1,8 +1,8 @@
 ---
 ---
 
-@import "reset";
-@import "variables";
+@import 'reset';
+@import 'variables';
 
 /**************/
 /* UTILITIES */
@@ -12,16 +12,21 @@
 /**************/
 /* BASE RULES */
 /**************/
-@import "base";
-@import "cssworkarounds";
+@import 'base';
+@import 'cssworkarounds';
 
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
-@import "header";
-@import "footer";
-@import "svg-icons";
+@import 'header';
+@import 'footer';
+@import 'svg-icons';
 
 /**************/
 /* COMPONENTS */
 /**************/
+
+/*********************/
+/* OTHER MEDIA TYPES */
+/*********************/
+@import 'print';
