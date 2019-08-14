@@ -14,9 +14,9 @@ description: Experiment and Thought Blog
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  email:
   github: midknight
-  linkedin:
+  linkedin: brian-baldock
+  twitter: brianbaldock
   rss: # just type anything here for a working RSS icon
 
 

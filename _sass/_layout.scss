@@ -1,0 +1,45 @@
+$site-class: '.site' !default;
+
+@mixin site {
+    &__wrapper {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr;
+        grid-auto-columns: 1fr;
+    }
+    
+    &__logo {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    &__navigation {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    &__content {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+
+    &__contact {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    &__footer {
+        grid-column: 1 / 4;
+        grid-row: 3;
+    }
+}
+
+@mixin bb-site {
+    #{$site-class} {
+        @include site;
+    }
+}
+
+@include bb-site;
+
+

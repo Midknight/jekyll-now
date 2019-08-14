@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-    {% include meta.html %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-  </head>
-  <body>
-      <header>
-        <a href="{{ site.baseurl }}/">Home</a>
-        <nav>
-          <ul>
-            <li><a href="{{ site.baseurl }}/about">About</a></li>
-            <li><a href="{{ site.baseurl }}/experiments">Experiments</a></li>
-            <li><a href="{{ site.baseurl }}/contact">Contact</a></li>  
-          </ul>
-        </nav>
-      </header>
-      <main>
-          {{ content }}
-      </main>
-      <footer>
-        <nav>
-            <ul>
-                <li><a href="{{ site.baseurl }}/about">About</a></li>
-                <li><a href="{{ site.baseurl }}/experiments">Experiments</a></li>
-                <li><a href="{{ site.baseurl }}/contact">Contact</a></li>  
-              </ul>
-        </nav>
-        <nav>
-            {% include svg-icons.html %}
-        </nav>
-      </footer>
-    {% include analytics.html %}
-  </body>
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+  {% include meta.html %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
+</head>
+<body>
+  <div class="site__wrapper">
+    <div class="site__logo"><a href="{{ site.baseurl }}/">Home</a></div>
+    <nav class="site__navigation">
+      <ul>
+        <li><a href="{{ site.baseurl }}/about">About</a></li>
+        <li><a href="{{ site.baseurl }}/experiments">Experiments</a></li>
+      </ul>
+    </nav>
+    <main class="site__content">
+      {{ content }}
+    </main>
+    {% include svg-icons.html %}
+    <footer class="site__footer">
+      <p>&copy; All rights reserved, Brian Baldock</p>
+    </footer>
+  </div>
+  {% include analytics.html %}
+</body>
+
 </html>

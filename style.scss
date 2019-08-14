@@ -2,20 +2,25 @@
 ---
 @charset 'UTF-8';
 
+/**************/
+/* RESET & VARIABLES */
+/**************/
 @import 'reset';
 @import 'variables';
+@import 'utilities';
 
 /**************/
 /* BASE RULES */
 /**************/
 @import 'base';
-@import 'cssworkarounds';
+@import 'typography';
+@import 'table';
+@import 'image';
 
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
-@import 'header';
-@import 'footer';
+@import 'layout';
 @import 'svg-icons';
 
 /**************/
@@ -26,3 +31,5 @@
 /* OTHER MEDIA TYPES */
 /*********************/
 @import 'print';
+
+@include add-color-palette;
