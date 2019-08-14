@@ -52,3 +52,12 @@
     background-image: -ms-linear-gradient($degrees, $color-one 0%, $color-two 100%);
     background-image: linear-gradient($degrees, $color-one 0%, $color-two 100%);
 }
+
+
+/// Vertical Rhythm Grid
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$vr: $font-size-base * $line-height-base;
+@function vr($count) {
+    @return calc(#{$vr} * #{$count})
+}

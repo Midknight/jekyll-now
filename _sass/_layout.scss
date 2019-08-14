@@ -4,7 +4,7 @@ $site-class: '.site' !default;
     &__wrapper {
         display: grid;
         grid-gap: 1rem;
-        grid-template-columns: 1fr;
+        grid-template-columns: 25% 25% 50%;
         grid-auto-columns: 1fr;
     }
     
