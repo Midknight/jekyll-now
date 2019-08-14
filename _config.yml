@@ -14,10 +14,12 @@ description: Experiment and Thought Blog
 
 # Includes an icon in the footer for each username you enter
 footer-links:
+  email:
   github: midknight
+  instgram:
   linkedin: brian-baldock
-  twitter: brianbaldock
-  rss: # just type anything here for a working RSS icon
+  rss: bb
+  twitter: brianbaldock  
 
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
