@@ -8,6 +8,7 @@
 @import 'reset';
 @import 'variables';
 @import 'utilities';
+@include add-color-palette;
 
 /**************/
 /* BASE RULES */
@@ -32,4 +33,3 @@
 /*********************/
 @import 'print';
 
-@include add-color-palette;
