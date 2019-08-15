@@ -5,28 +5,26 @@
 /**************/
 /* RESET & VARIABLES */
 /**************/
-@import 'reset';
 @import 'variables';
 @import 'utilities';
 @include add-color-palette;
-
-/**************/
-/* BASE RULES */
-/**************/
-@import 'base';
-@import 'typography';
-@import 'table';
-@import 'image';
 
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
 @import 'layout';
-@import 'svg-icons';
+
+/**************/
+/* BASE RULES */
+/**************/
+@import 'base';
+@import 'table';
+@import 'image';
 
 /**************/
 /* COMPONENTS */
 /**************/
+@import 'menu';
 
 /*********************/
 /* OTHER MEDIA TYPES */

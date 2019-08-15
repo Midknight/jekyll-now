@@ -46,6 +46,11 @@
     }
 }
 
+/// Hover change
+@function hover($color) {
+    @return darken($color, 15%);
+}
+
 
 /// Linear Gradient Mixin
 @mixin linear-gradient($color-one, $color-two, $degrees) {
@@ -55,9 +60,32 @@
 
 
 /// Vertical Rhythm Grid
-$font-size-base: 16px;
+$font-size-base: 20px;
 $line-height-base: 1.5;
 $vr: $font-size-base * $line-height-base;
 @function vr($count) {
-    @return calc(#{$vr} * #{$count})
+    @return calc(#{$vr} * #{$count});
+}
+
+
+/// Vertical Line
+$minus-one: calc(#{$vr} - 1px);
+.vertical-grid {
+    background: repeating-linear-gradient(
+        transparent,
+        transparent $minus-one,
+        #e05851 $minus-one,
+        #e05851 $vr
+    );
+    display: none;
+    height: 400%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -100;
+}
+
+#vertical-grid:checked ~ .vertical-grid {
+    display: block;
 }

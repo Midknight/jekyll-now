@@ -1,0 +1,190 @@
+$menu-class: '.menu' !default;
+$menu-items-padding: $global-menu-padding !default;
+$menu-nested-margin: $global-menu-nested-margin !default;
+$menu-simple-margin: vr(1) !default;
+$menu-icon-spacing: 0.25rem !default;
+
+@mixin menu-base {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    a, .button {
+        text-decoration: none;
+        display: block;
+        padding: $menu-items-padding;
+    }
+    input {
+        display: inline-block;
+    }
+}
+
+@mixin menu-expand {
+    li {
+        flex: 1 1 0px;
+    }
+}
+
+@mixin menu-align($alignment) {
+    @if $alignment == left {
+        justify-content: flex-start;
+    } @else if $alignment == right {
+        li {
+            display: flex;
+            justify-content: flex-end;
+            .submenu li {
+                justify-content: flex-start;
+            }
+        }
+        &.vertical li {
+            display: block;
+            text-align: right;
+            .submenu li {
+                text-align: right;
+            }
+        }
+    } @else if $alignment == center {
+        li {
+            display: flex;
+            justify-content: center;
+            .submenu li {
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+@mixin menu-direction($dir: horizontal) {
+    @if $dir == horizontal {
+        flex-wrap: wrap;
+        flex-direction: row;
+    } @else if $dir == vertical {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    } @else  {
+        @warn 'The direction used for the menu-direction() must be horizontal or vertical.';
+    }
+}
+
+@mixin menu-simple($dir: left, $margin: $menu-simple-margin) {
+    align-items: center;
+    li + li {
+        margin-#{$dir}: $margin;
+    }
+    a {
+        padding: 0;
+    }
+}
+
+@mixin menu-nested($margin: $menu-nested-margin, $nested-alignment: left) {
+    @if $nested-alignment == right {
+        margin-right: $margin;
+        margin-left: 0;
+    } @else {
+        margin-right: 0;
+        margin-left: $margin;
+    }
+}
+
+@mixin menu-icons() {
+    a {
+        display: flex;
+    }
+}
+
+@mixin menu-icon-position($position: left, $spacing: $menu-icon-spacing) {
+    @if $position == left {
+        li a {
+            flex-flow: row nowrap;
+        }
+        img, i, svg {
+            margin-right: $spacing;
+        }
+    } @else if $position == right {
+        li a {
+            flex-flow: row nowrap;
+        }
+        img, i, svg {
+            margin-left: $spacing;
+        }
+    } @else if $position == top {
+        li a {
+            flex-flow: column nowrap;
+        }
+        img, i, svg {
+            align-self: stretch;
+            margin-bottom: $spacing;
+            text-align: center;
+        }
+    } @else if $position == bottom {
+        li a {
+            flex-flow: column nowrap;
+        }
+        img, i, svg {
+            align-self: stretch;
+            margin-bottom: $spacing;
+            text-align: center;
+        }
+    }
+}
+
+@mixin menu-text {
+    padding: $global-menu-padding;
+    font-weight: bold;
+    color: inherit;
+}
+
+@mixin bb-menu {
+    #{$menu-class} {
+        @include menu-base;
+        &, &.horizontal {
+            @include menu-direction(horizontal);
+        }
+        &.vertical {
+            @include menu-direction(vertical);
+        }
+        &.expanded {
+            @include menu-expand();
+        }
+        &.simple {
+            @include menu-simple();
+        }
+        &.nested {
+            @include menu-nested();
+        }
+        &.icons {
+            @include menu-icons();
+        }
+        &.icon-left {
+            @include menu-icon-position(left);
+        }
+        &.icon-right {
+            @include menu-icon-position(right);
+        }
+        &.icon-top {
+            @include menu-icon-position(top);
+        }
+        &.icon-bottom {
+            @include menu-icon-position(bottom);
+        }
+        &.align-left {
+            @include menu-align(left);
+        }
+        &.align-right {
+            @include menu-align(right);
+            .nested {
+                @include menu-nested($nested-alignment: right);
+            }
+        }
+        &.align-center {
+            @include menu-align(center);
+        }
+        .menu-text {
+            @include menu-text();
+        }
+    }
+}
+
+@include bb-menu();

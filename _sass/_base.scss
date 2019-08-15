@@ -1,6 +1,12 @@
-html {
-  font-size: 16px;
-  line-height: 24px;
+/// Reset
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ol, ul, blockquote, p {
+  margin: 0;
 }
 
 * {
@@ -8,26 +14,15 @@ html {
   line-height: vr(1);
 }
 
+/// Typography
+
 body {
   background: $white;
   font-family: $sans-serif-ff;
-  font-size: 1rem;
-  line-height: 1.5rem;
   color: $darkGray;
-  margin: 4rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 1em 0 15px;
-  padding: 0;
-
+  margin: vr(4);
   @include mobile {
-    line-height: 1.4;
+    margin: vr(1);
   }
 }
 
@@ -35,10 +30,22 @@ h1 {
   font-size: 2.5em;
   line-height: vr(2);
   margin-bottom: vr(1);
-
   a {
     color: inherit;
+    &:hover {
+      color: hover($black);
+    }
   }
+}
+
+@include print {
+      // QR Code for Header
+      h1::after {
+        content: url(https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=https://www.brian.baldock&choe=UTF-8);
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }
 
 h2 {
@@ -70,7 +77,16 @@ p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
 } 
 
 p {
-  margin: 15px 0;
+  + p {
+    margin-top: vr(1);
+    margin-bottom: vr(1);
+  }
+}
+
+small {
+  font-size: .8em;
+  margin-top: vr(1);
+  margin-bottom: vr(1);
 }
 
 a {
@@ -86,8 +102,9 @@ a {
 
 ul,
 ol {
-  margin: 15px 0;
-  padding-left: 30px;
+  margin-top: vr(1);
+  margin-bottom: vr(1);
+  padding-left: 1em;
 }
 
 ul {
@@ -122,4 +139,94 @@ b {
 
 img {
   max-width: 100%;
+}
+
+.form {
+  
+  &__field {
+    margin-bottom: vr(1);
+  }
+
+  &__group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .form__field {
+      margin-right: 1em;
+    }
+  }
+
+  &__actions {
+    margin-top: vr(1);
+  }
+
+  + .form {
+    margin-top: vr(3);
+  }
+}
+
+label {
+  display: block;
+  font-size: .8em;
+  font-weight: bold;
+  line-height: vr(1);
+}
+
+.input {
+  &--full-width {
+    width: 100%;
+  }
+}
+
+input {
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: .9em;
+  height: vr(1);
+  outline: none;
+  padding: 0 .5em;
+
+  &[type=text],&[type=textarea],&[type=number],&[type=phone],&[type=email] {
+    &:hover {
+      border-color: $lightGray;
+    }
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+  &[type=radio],&[type=checkbox] {
+    height: initial;
+    + label {
+      display: inline;
+    }
+  }
+}
+
+.button {
+  background-color: $gray;
+  border-radius: $border-radius;
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8em;
+  height: vr(1);
+  padding: 0 2em;
+  text-decoration: none;
+  transition: all .3s ease;
+  &:hover, &:active, &:focus {
+    background-color: hover($gray);
+  }
+  &--cta {
+    background-color: $primary-color;
+    &:hover,&:active,&:focus {
+      background-color: hover($primary-color);
+    }
+  }
+  + .button {
+    margin-right: 1em;
+  }
 }

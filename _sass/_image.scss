@@ -1,0 +1,8 @@
+#{$site-class}__logo img {
+    
+    @include print {
+    filter: url(images/logo-inverse.svg#negative);
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    }
+}
