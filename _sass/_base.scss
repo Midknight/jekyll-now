@@ -32,6 +32,7 @@ h1 {
   margin-bottom: vr(1);
   a {
     color: inherit;
+    transition: color .9s ease;
     &:hover {
       color: hover($black);
     }
