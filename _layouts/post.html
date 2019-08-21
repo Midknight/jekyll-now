@@ -1,7 +1,13 @@
 ---
 layout: default
 ---
-
+<style>
+  @media print {
+    h1::after {
+      content: url(https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl={{ site.url }}{{ page.url }}&choe=UTF-8);
+    }
+  }
+</style>
 <article class="post">
   <h1>{{ page.title }}</h1>
 

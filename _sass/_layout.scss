@@ -8,9 +8,15 @@ $site-class: '.site' !default;
                     "logo logo content"
                     "navigation contact content"
                     "footer footer footer";
-        grid-template-columns: 150px 0fr 2fr;
+        grid-template-columns: minmax(0, .75fr) 0fr minmax(0, 2fr);
         grid-template-rows: 150px 0fr 0fr;
         grid-auto-columns: 1fr;
+        @include tablet {
+            grid-template: "logo navigation"
+                           "content content"
+                           "contact contact"
+                           "footer footer"
+        }
         @include mobile {
             grid-template:  "logo"
                             "navigation"
