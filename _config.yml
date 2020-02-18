@@ -6,7 +6,7 @@
 name: Brian Baldock
 
 # Short bio or description (displayed in the header)
-description: Experiment and Thought Blog
+description: Experiment and Thoughts
 
 #
 # Flags below are optional
@@ -16,7 +16,7 @@ description: Experiment and Thought Blog
 footer-links:
   email:
   github: midknight
-  instgram:
+  instagram:
   linkedin: brian-baldock
   rss: bb
   twitter: brianbaldock  
@@ -62,13 +62,9 @@ kramdown:
 sass:
   style: :compressed # You might prefer to minify using :compressed :expanded
 
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-
 # Plugins - github approved
 plugins:
+- jekyll-feed
 - jekyll-sitemap
 - jekyll-seo-tag
 - jekyll-redirect-from
