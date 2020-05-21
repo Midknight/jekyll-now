@@ -7,29 +7,16 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
     href="{{ site.baseurl }}/feed.xml" />
 </head>
-<body>
-  <header>
-  <input type="checkbox" name="" value="" id="vertical-grid">
-  <label for="vertical-grid">View Grid</label>
-  <div class="vertical-grid"></div>
-  </header>
-  <div class="site__wrapper">
-    <div class="site__logo"><a href="{{ site.baseurl }}/">Home</a></div>
-    <nav class="site__navigation hide-for-print">
-      <ul class="menu vertical">
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="{{ site.baseurl }}/experiments">Experiments</a></li>
-      </ul>
-    </nav>
-    <main class="site__content">
-      {{ content }}
-    </main>
-    {% include svg-icons.html %}
-    <footer class="site__footer">
-      <small>&copy; All rights reserved, Brian Baldock</small>
-    </footer>
-  </div>
+<body class="site__wrapper">
+  <div class="site__logo"><a href="{{ site.baseurl }}/">Home</a></div>
+  {% include navigation.html %}
+  <main class="site__content">
+    {{ content }}
+  </main>
+  {% include svg-icons.html %}
+  {% include footer.html %}
   {% include analytics.html %}
+  {% include vertical-rhythm.html %}
 </body>
 
 </html>

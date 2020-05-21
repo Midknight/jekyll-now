@@ -20,10 +20,6 @@ body {
   background: $white;
   font-family: $sans-serif-ff;
   color: $darkGray;
-  margin: vr(4);
-  @include mobile {
-    margin: vr(1);
-  }
 }
 
 h1 {

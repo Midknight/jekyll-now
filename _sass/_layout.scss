@@ -11,13 +11,17 @@ $site-class: '.site' !default;
         grid-template-columns: minmax(0, .75fr) 0fr minmax(0, 2fr);
         grid-template-rows: 150px 0fr 0fr;
         grid-auto-columns: 1fr;
+        margin: vr(4);
+        @include mobile {
+          margin: vr(1);
+        }
         @include tablet {
             grid-template: "logo navigation"
                            "content content"
                            "contact contact"
-                           "footer footer"
+                           "footer footer";
         }
-        @include mobile {
+        @include desktop {
             grid-template:  "logo"
                             "navigation"
                             "content"
