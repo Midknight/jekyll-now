@@ -79,3 +79,4 @@ exclude:
   - README.md
   - CNAME
   - notes.md
+  - .jekyll-cache
